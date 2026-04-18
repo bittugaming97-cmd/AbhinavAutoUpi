@@ -6,10 +6,10 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 # 🔑 CONFIG
-API_ID = 34039354
-API_HASH = "e8f8739959e4fbe917f4780c13625543"
-BOT_TOKEN = "8710805840:AAESMNAP0iPBEvHEHvr5LX_nWY4qfATLgW8"
-ADMIN_ID = 8094093317
+API_ID = 30442407
+API_HASH = "27740c262c0c93fb897c789dc2a7326e"
+BOT_TOKEN = "8684248491:AAEM2oSOyilVxagWyUjI71_svP6rX_jEjIE"
+ADMIN_ID = 8684248491
 
 app = Client("pro_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
@@ -18,7 +18,7 @@ DB_FILE = "data.json"
 # ---------------- DB ----------------
 def load_db():
     if not os.path.exists(DB_FILE):
-        return {"upi": "abhinav62@fam"}
+        return {"upi": "amitupadhyay07@axl"}
     with open(DB_FILE) as f:
         return json.load(f)
 
@@ -45,7 +45,7 @@ def main_menu():
 
 @app.on_message(filters.command("start"))
 async def start(client, message):
-    await message.reply("🔥 Welcome to Abhinav Gaming Store Bot\n 🔥 ─── WHY CHOOSE US ───🔥\n\n🔑 Genuine Premium Keys\n⚡ Instant Auto Delivery\n🛡️ Secure UPI Payments\n💎 Unbeatable Prices\n👊 Real 24/7 Support\n━━━━━━━━━━━━━━━━━━━━━━\n💰 Let's get you a key!", reply_markup=main_menu())
+    await message.reply("🔥 Welcome to Bittu Gaming Store Bot\n 🔥 ─── WHY CHOOSE US ───🔥\n\n🔑 Genuine Premium Keys\n⚡ Instant Auto Delivery\n🛡️ Secure UPI Payments\n💎 Unbeatable Prices\n👊 Real 24/7 Support\n━━━━━━━━━━━━━━━━━━━━━━\n💰 Let's get you a key!", reply_markup=main_menu())
 
 # ---------------- SHOP ----------------
 @app.on_callback_query(filters.regex("shop"))
