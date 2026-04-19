@@ -228,6 +228,24 @@ async def reject(client, query):
 
     users.pop(user_id, None)
 
+@app.on_message(filters.command("broadcast"))
+async def broadcast(client, message):
+    if message.from_user.id != ADMIN_ID:
+        return
+
+    text = message.text.split(maxsplit=1)[1]
+
+    sent = 0
+
+    for uid in list(users.keys()):
+        try:
+            await app.send_message(uid, f"📢 {text}")
+            sent += 1
+        except:
+            pass
+
+    await message.reply(f"✅ Sent: {sent}")
+    
 # ---------------- SET UPI ----------------
 @app.on_message(filters.command("setupi"))
 async def set_upi(client, message):
